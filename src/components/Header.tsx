@@ -6,9 +6,9 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="bg-gray-800 text-white py-4">
-      <nav className="max-w-5xl mx-auto px-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold">
-          Ricardo Carvalho
+      <nav className="max-w-5xl mx-auto px-6 flex justify-between items-center">
+        <Link href="/" className="text-2xl font-bold text-teal-500">
+          Home
         </Link>
         <button
           className="md:hidden"
@@ -24,11 +24,7 @@ export default function Header() {
             />
           </svg>
         </button>
-        <ul
-          className={`${
-            isOpen ? 'block' : 'hidden'
-          } md:flex space-x-4 absolute md:static top-16 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent p-4 md:p-0`}
-        >
+        <ul className={`md:flex space-x-8 absolute md:static top-16 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent p-4 md:p-0 ${isOpen ? 'block' : 'hidden'}`}>
           <li>
             <Link href="/cv" className="hover:text-blue-500" aria-label="View CV">
               CV

@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Ricardo Carvalho - Senior Business Central Developer',
+  title: 'Home - Ricardo Carvalho',
   description: 'Portfolio of Ricardo Carvalho, a Senior Microsoft 365 Business Central Developer.',
   openGraph: {
-    title: 'Ricardo Carvalho - Senior Business Central Developer',
+    title: 'Home - Ricardo Carvalho',
     description: 'Portfolio of Ricardo Carvalho, a Senior Microsoft 365 Business Central Developer.',
     url: 'https://mrricardocarvalho.github.io/devportfolio',
   },
@@ -12,15 +12,15 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <section className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <section className="min-h-screen bg-gray-900 flex items-center justify-center">
       <div className="text-center">
         <img
           src="/profile.png"
           alt="Ricardo Carvalho"
           className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-teal-500"
         />
-        <h1 className="text-5xl font-bold mb-2">Ricardo Carvalho</h1>
-        <p className="text-2xl mb-6 text-gray-600">
+        <h1 className="text-5xl font-bold mb-2">Home</h1>
+        <p className="text-2xl mb-6 text-gray-300">
           Senior Microsoft 365 Business Central Developer
         </p>
         <p className="text-lg mb-8 max-w-md mx-auto">
