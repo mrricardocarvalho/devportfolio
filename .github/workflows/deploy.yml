@@ -15,4 +15,8 @@ jobs:
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+<<<<<<< HEAD
           publish_dir: ./out
+=======
+          publish_dir: ./out
+>>>>>>> 14351de (Initial setup: Integrated profile.png, redesigned homepage with hero section, updated header/footer, and fixed basic styling. Ready for further design refinements.)

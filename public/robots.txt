@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mrricardocarvalho.github.io/devportfolio
+
+# Sitemaps
+Sitemap: https://mrricardocarvalho.github.io/devportfolio/sitemap.xml
