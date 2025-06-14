@@ -12,18 +12,18 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <section className="min-h-screen bg-gray-900 flex items-center justify-center">
+    <section className="min-h-screen bg-[var(--background)] flex items-center justify-center">
       <div className="text-center">
         <img
           src="/profile.png"
           alt="Ricardo Carvalho"
           className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-teal-500"
         />
-        <h1 className="text-5xl font-bold mb-2">Home</h1>
-        <p className="text-2xl mb-6 text-gray-300">
+        <h1 className="text-5xl font-bold mb-2">Ricardo Carvalho</h1>
+        <p className="text-2xl mb-6 text-[var(--foreground)]">
           Senior Microsoft 365 Business Central Developer
         </p>
-        <p className="text-lg mb-8 max-w-md mx-auto">
+        <p className="text-lg mb-8 max-w-md mx-auto text-gray-400">
           Crafting custom AL extensions and modern web solutions.
         </p>
         <div className="space-x-4">

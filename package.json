@@ -10,6 +10,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.10",
     "gray-matter": "^4.0.3",
     "next": "15.3.3",
     "next-seo": "^6.8.0",
@@ -23,14 +24,16 @@
   "devDependencies": {
     "@docsearch/react": "^3.9.0",
     "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/postcss": "^4.1.10",
     "@types/node": "^20",
     "@types/prismjs": "^1.26.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
-    "tailwindcss": "^4",
+    "postcss": "^8.5.5",
+    "tailwindcss": "^4.1.10",
     "typescript": "^5"
   }
 }
