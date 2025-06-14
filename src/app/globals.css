@@ -16,7 +16,7 @@
 
 @layer base {
   body {
-    @apply bg-[var(--background)] text-[var(--foreground)] font-sans;
+    @apply bg-[var(--background)] text-[var(--foreground)];
   }
   @font-face {
     font-family: 'Poppins';

@@ -1,4 +1,3 @@
-import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 
 export const metadata = {

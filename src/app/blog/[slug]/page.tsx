@@ -5,12 +5,15 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import PrismClient from '@/components/PrismClient';
 import Utterances from '@/components/Utterances';
+import type { Metadata, ResolvingMetadata } from 'next';
 
+// Define the BlogPostProps interface for the post data
 interface BlogPostProps {
   frontmatter: { title: string; date: string; tags: string[] };
   content: string;
 }
 
+// Export generateStaticParams (unchanged)
 export async function generateStaticParams() {
   try {
     const files = await fs.readdir('src/content/blog');
@@ -25,6 +28,7 @@ export async function generateStaticParams() {
   }
 }
 
+// Fetch post data (unchanged)
 async function getPost(slug: string): Promise<BlogPostProps> {
   try {
     const filePath = path.join(process.cwd(), 'src/content/blog', `${slug}.md`);
@@ -41,21 +45,30 @@ async function getPost(slug: string): Promise<BlogPostProps> {
   }
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const { frontmatter } = await getPost(params.slug);
+// Generate metadata with proper typing
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const resolvedParams = await params;
+  const { frontmatter } = await getPost(resolvedParams.slug);
+  const previousImages = (await parent).openGraph?.images || [];
   return {
     title: `${frontmatter.title} - Ricardo Carvalho`,
     description: `Blog post about ${frontmatter.title}`,
     openGraph: {
       title: frontmatter.title,
       description: `Blog post about ${frontmatter.title}`,
-      url: `https://mrricardocarvalho.github.io/devportfolio/blog/${params.slug}`,
+      url: `https://mrricardocarvalho.github.io/devportfolio/blog/${resolvedParams.slug}`,
+      images: [...previousImages],
     },
   };
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-  const { frontmatter, content } = await getPost(params.slug);
+// Define the async page component with Promise-based params
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const { frontmatter, content } = await getPost(resolvedParams.slug);
   return (
     <article className="max-w-3xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-4">{frontmatter.title}</h1>
@@ -71,7 +84,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
               {children}
             </a>
           ),
-          code: ({ node, className, children }) => {
+          code: ({ className, children }) => {
             const isBlock = className?.includes('language-');
             return (
               <code

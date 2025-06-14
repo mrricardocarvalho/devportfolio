@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Home - Ricardo Carvalho',
@@ -14,10 +15,12 @@ export default function Home() {
   return (
     <section className="min-h-screen bg-[var(--background)] flex items-center justify-center">
       <div className="text-center">
-        <img
+      <Image
           src="/profile.png"
           alt="Ricardo Carvalho"
-          className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-teal-500"
+          width={128} // Set width in pixels
+          height={128} // Set height in pixels
+          className="rounded-full mx-auto mb-4 border-4 border-teal-500"
         />
         <h1 className="text-5xl font-bold mb-2">Ricardo Carvalho</h1>
         <p className="text-2xl mb-6 text-[var(--foreground)]">
